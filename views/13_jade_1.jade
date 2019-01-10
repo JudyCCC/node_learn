@@ -1,0 +1,50 @@
+html
+  head
+    script.
+      window.onload=function(){
+       var oBtn=document.getElementById('btn1');
+       oBtn.onclick=function(){
+         alert('aaa');
+       };
+      };
+    script
+      include 13_jade_a.js
+  body
+    |abc
+
+    div 我的名字： #{name}
+
+    div #{a+b}
+    
+    div(style=json)
+    div(class=arr)
+    div(class=arr class="left")
+
+    -var c=12;
+    -var d=5;
+    div 结果是: #{c+d}
+
+    span #{a}
+    span=a
+
+    -for(var i=0;i<loop.length;i++)
+      div=loop[i]
+
+    div!=content
+
+    -var e=12;
+    if(e%2==0)
+      div(style={background:'red'}) 偶数
+    else
+      div(style={background:'green'}) 基数
+
+    -var f=1;
+    case f
+      when 0
+        div aaa
+      when 1
+        div bbb
+      when 2
+        div ccc
+      default
+        |不靠谱

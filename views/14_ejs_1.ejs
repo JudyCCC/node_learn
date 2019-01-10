@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <% for(var i=0;i<json.arr.length;i++){ %>
+      <div>name: <%= json.arr[i].user %> psd: <%= json.arr[i].pass %></div>
+    <% } %>
+
+    <% var str="<div></div>" %>
+    <%- str %>
+
+    <% include ../aaa.txt %>
+
+    <% if(type=='admin'){ %>
+    <% include ../style/14_ejs_admin.css %>
+    <% }else{ %>
+    <%  include ../style/14_ejs_user.css %>
+    <% } %>
+  </div>
+</body>
+</html>
